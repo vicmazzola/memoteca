@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --baby-blue: #DBE4EF;
+  --dark-blue: #041832;
+  --light-gray: #EDF0F4;
+  --medium-gray: #8F8F8F;
+  --gray: #444;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding-top: 120px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 280vh;
+  box-sizing: border-box; 
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/background.png'); 
+  background-size: cover;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.overlay-color {
+  background-color: #F4F4F4;
+}
+
+header {
+  padding: 112px 240px 112px 360px;
+  background: var(--dark-blue, #041832);
+}
+
+.header-content {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  align-items: center;
+}
+
+header .logo {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+header .logo img {
+  max-width: 200px;
+}
+
+header .logo h1 {
+  color: var(--baby-blue, #DBE4EF);
+  font-family: "Poppins", sans-serif;
+  align-self: center;
+  font-size: 52px;
+  font-weight: 300;
+  line-height: 67.6px;
+}
+
+.header-image img {
+  max-width: 500px;
+}
+
+footer {
+  padding: 32px 360px;
+  background: #041832;
+  color: var(--baby-blue, #DBE4EF);
+  text-align: center;
+  width: 100%;
+  position: relative;
+  left: 0;
+}
+
+h2, h3 {
+  color: var(--dark-blue, #041832);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+#form-container {
+  display: flex;
+  padding: 48px 40px;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  align-self: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: #FFF;
+  box-shadow: 8px 8px 20px 0px rgba(4, 24, 50, 0.08);
+  width: 100%;
+  max-width: 712px;
+  margin-top: 40px;
+}
+
+#thought-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#thought-content, #thought-author {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--light-gray, #EDF0F4);
+  word-wrap: break-word; 
+  overflow-wrap: break-word; 
+}
+
+#thought-content {
+  min-height: 80px;
+}
+
+#thought-form label {
+  margin-bottom: 16px;
+  color: var(--dark-blue, #041832);
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+#thought-content::placeholder, #thought-author::placeholder {
+  color: var(--medium-gray, #8F8F8F);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+#thought-form textarea,
+#thought-form input {
+  margin-bottom: 24px;
+  outline: none;
+  border-style: none;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 16px;
+} 
+
+#button-save, #button-cancel {
+  padding: 8px 32px;
+  border-radius: 32px;
+  color: var(--baby-blue, #DBE4EF);
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+#button-save {
+  background: var(--dark-blue, #041832);
+  min-width: 160px;
+}
+
+#button-cancel {
+  color: var(--dark-blue, #041832);
+}
+
+#thought-list-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px 0;
+}
+
+#thought-list-container h3 {
+  margin: 40px 0;
+}
+
+#thought-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 32px;
+}
+
+.li-thought {
+  position: relative;
+  padding: 16px;
+  background: var(--white, #FFF);
+  box-shadow: 8px 8px 0px 0px #154580;
+  flex: 1 1 calc(33.333% - 24px);
+  max-width: calc(33.333% - 24px);
+  min-width: 384px;
+  min-height: 315px; 
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.icon-quotes {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  width: 64px;
+  height: 50px;
+}
+
+.thought-content, .thought-author {
+  margin-left: 20px; 
+  color: var(--gray, #444);
+  font-family: "Roboto Mono";
+  font-style: normal;
+  line-height: normal;
+  margin-bottom: 16px; 
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.thought-content {
+  margin-top: 96px; 
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.thought-author {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.icons {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+.button-edit, .button-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 8px;
+}
+
+.button-edit img, .button-delete img {
+  width: 20px;
+  height: 20px;
+}
+
+span {
+  width: 180px;
+  height: 1px;
+  background: #041832;
+  margin: 96px 0 48px 0;
+}

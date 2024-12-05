@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thoughts CRUD</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <img src="assets/images/logo.png" alt="Logo">
+          <h1>Song lyrics,<br> book quotes, and
+            <br> <strong>your best ideas
+            <br> in one place!</strong>
+          </h1>
+        </div>
+        <div class="header-image">
+          <img 
+            src="assets/images/computer-header.png" 
+            alt="Header computer illustration">
+        </div>
+      </div>
+    </header>
+    <main class="background-overlay">
+      <div class="overlay"></div>
+      <div class="overlay overlay-color"></div>
+      <h2>Add a new thought:</h2>
+      <section id="form-container">
+        <form id="thought-form">
+          <input type="hidden" id="thought-id" />
+          <label for="thought-content">Thought</label>
+          <textarea 
+            id="thought-content" 
+            placeholder="Enter your thought" 
+            required>
+          </textarea>
+          <label 
+            for="thought-author">
+              Author or Source
+            </label>
+          <input 
+            type="text" 
+            id="thought-author" 
+            placeholder="Enter the author or source" 
+            required />
+          <div class="form-buttons">
+            <button 
+              type="submit" 
+              id="button-save">
+              Add
+            </button>
+            <button 
+              type="button" 
+              id="button-cancel">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </section>
+      <span></span>
+      <section id="thought-list-container">
+        <h3>My Wall</h3>
+        <ul id="thought-list"></ul>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 
+        2024 Developed by Alura. 
+        Fictional project with no commercial purposes.</p>
+    </footer>
+  </body>
+</html>
