@@ -5,10 +5,28 @@ const api = {
             return await response.json()
         } catch {
             alert('Error when searching for thoughts')
-            throw console.error
+            throw error
+            
+        }
+    },
+
+    async saveThought(thought) {
+        try {
+            const response = await fetch('http://localhost:3000/thoughts', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(thought)
+            } )
+            return await response.json()
+        } catch {
+            alert('Error when searching for thoughts')
+            throw error
             
         }
     }
+
 }
 
 export default api;
