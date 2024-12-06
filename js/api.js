@@ -1,4 +1,4 @@
-const api {
+const api = {
     async searchThoughts() {
         try {
             const response = await fetch('http://localhost:3000/thoughts')

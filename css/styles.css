@@ -209,7 +209,7 @@ h2, h3 {
   row-gap: 32px;
 }
 
-.li-thought {
+.thought-li {
   position: relative;
   padding: 16px;
   background: var(--white, #FFF);
