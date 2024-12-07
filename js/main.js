@@ -22,10 +22,12 @@ async function manipulateSubmitForm(event) {
     const author = document.getElementById("thought-author").value
 
     try {
-        await api.saveThought({ content, author })
+        if (id) {
+            await api.editThought({ id, content, author })
+        } else {
+            await api.saveThought({ content, author })
+        }
         ui.renderThoughts()
-
-
 
     } catch {
         alert("Error when saving thoughts")
@@ -34,6 +36,6 @@ async function manipulateSubmitForm(event) {
 
 }
 
-function manipulateCancel(){
+function manipulateCancel() {
     ui.cancelForm()
 }

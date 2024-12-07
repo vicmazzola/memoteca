@@ -6,7 +6,7 @@ const api = {
         } catch {
             alert('Error when searching for thoughts')
             throw error
-            
+
         }
     },
 
@@ -18,12 +18,12 @@ const api = {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(thought)
-            } )
+            })
             return await response.json()
         } catch {
             alert('Error when searching for thoughts')
             throw error
-            
+
         }
     },
 
@@ -34,29 +34,29 @@ const api = {
         } catch {
             alert('Error when searching for thought')
             throw error
-            
+
         }
     },
 
     async editThought(thought) {
         try {
-          const response = await fetch(`http://localhost:3000/thoughts/${thought.id}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(thought)
-          })
-          return await response.json()
+            const response = await fetch(`http://localhost:3000/thoughts/${thought.id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(thought)
+            })
+            return await response.json()
         }
         catch {
-          alert('Error when try to edit thought')
-          throw error
+            alert('Error when try to edit thought')
+            throw error
         }
-      },
+    },
 
-    
-    
+
+
 }
 
 export default api;
