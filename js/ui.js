@@ -17,11 +17,18 @@ const ui = {
 
     async renderThoughts() {
         const thoughtList = document.getElementById("thought-list");
+        const emptyMessage = document.getElementById("empty-message")
         thoughtList.innerHTML = ""
 
         try {
             const thoughts = await api.searchThoughts();
             thoughts.forEach(ui.addThoughtOnList)
+            if(thoughts.lenght === 0){
+                emptyMessage.style.display = "block";
+            } else {
+                emptyMessage.style.display = "none";
+                thoughts.forEach(ui.addThoughtOnList)
+            }
         } catch {
             alert("Error rendering thoughts");
         }
