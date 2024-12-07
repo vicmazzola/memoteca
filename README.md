@@ -1,4 +1,4 @@
-# Memoteca (CRUD API Project)
+# Memoteca
 
 This web application was built as part of the Alura course **JavaScript: Making HTTP Requests**. It follows the course content with adaptations and enhancements.
 
@@ -13,7 +13,7 @@ The project demonstrates the fundamentals of web development with JavaScript by 
 - Leveraging JavaScript’s **Fetch API** for HTTP requests.
 
 ## 🌐 Live Demo
-Explore the application live at: [Memoteca CRUD API Project](https://memoteca-ebon.vercel.app/)
+Explore the application live at: [Memoteca](https://memoteca-ebon.vercel.app/)
 
 ## 🖼️ Preview
 ![Project Preview](./img/img-preview.png)
@@ -43,14 +43,19 @@ Explore the application live at: [Memoteca CRUD API Project](https://memoteca-eb
 The project is organized into a clear folder structure:
 
 ```bash
-├── index.html             # The main HTML file providing the structure of the app
-├── styles.css             # Contains all styles for the application
-├── app/                   # Directory for JavaScript files
-│   ├── ui.js              # User interface interactions
-│   ├── main.js            # Core logic for the application
-│   ├── api.js             # HTTP request configuration
-├── db.json                # JSON Server database file
-├── img/                   # Directory for storing image assets
+├── assets/                # Directory for assets
+│   ├── images/            # Directory for image assets
+├── backend/               # Directory for backend-related files
+│   ├── db.json            # JSON Server database file
+│   ├── package.json       # Configuration file for JSON Server
+├── css/                   # Directory for CSS files
+│   ├── styles.css         # Main stylesheet
+├── js/                    # Directory for JavaScript files
+│   ├── api.js             # Handles HTTP requests
+│   ├── main.js            # Core application logic
+│   ├── ui.js              # Manages user interface interactions
+├── index.html             # The main HTML file providing the app structure
+```
 
 
 ## 🚀 Deployment
