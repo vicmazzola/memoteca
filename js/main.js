@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ui.renderThoughts()
 
     const thoughtForm = document.getElementById("thought-form")
+    const buttonCancel = document.getElementById("button-cancel")
 
     thoughtForm.addEventListener("submit", manipulateSubmitForm)
+    buttonCancel.addEventListener("click", manipulateCancel)
 
 
 })
@@ -30,4 +32,8 @@ async function manipulateSubmitForm(event) {
 
     }
 
+}
+
+function manipulateCancel(){
+    ui.cancelForm()
 }

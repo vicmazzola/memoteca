@@ -1,6 +1,12 @@
 import api from "./api.js";
 
+
 const ui = {
+
+    cancelForm() {
+        document.getElementById("thought-form").reset();
+    },
+
     async renderThoughts() {
         const thoughtList = document.getElementById("thought-list");
         try {
