@@ -1,7 +1,10 @@
+const URL_BASE = "http://localhost:3000"
+
+
 const api = {
     async searchThoughts() {
         try {
-            const response = await fetch('http://localhost:3000/thoughts')
+            const response = await fetch(`${URL_BASE}/thoughts`)
             return await response.json()
         } catch {
             alert('Error when searching for thoughts')
@@ -12,7 +15,7 @@ const api = {
 
     async saveThought(thought) {
         try {
-            const response = await fetch('http://localhost:3000/thoughts', {
+            const response = await fetch(`${URL_BASE}/thoughts`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -29,7 +32,7 @@ const api = {
 
     async searchThoughtById(id) {
         try {
-            const response = await fetch(`http://localhost:3000/thoughts/${id}`)
+            const response = await fetch(`${URL_BASE}/thoughts/${id}`)
             return await response.json()
         } catch {
             alert('Error when searching for thought')
@@ -40,7 +43,7 @@ const api = {
 
     async editThought(thought) {
         try {
-            const response = await fetch(`http://localhost:3000/thoughts/${thought.id}`, {
+            const response = await fetch(`${URL_BASE}/thoughts/${thought.id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -57,7 +60,7 @@ const api = {
 
     async deleteThought(id) {
         try {
-            const response = await fetch(`http://localhost:3000/thoughts/${id}`, {
+            const response = await fetch(`${URL_BASE}/thoughts/${id}`, {
                 method: "DELETE",
             })
 
