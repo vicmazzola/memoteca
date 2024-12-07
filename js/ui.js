@@ -17,6 +17,8 @@ const ui = {
 
     async renderThoughts() {
         const thoughtList = document.getElementById("thought-list");
+        thoughtList.innerHTML = ""
+
         try {
             const thoughts = await api.searchThoughts();
             thoughts.forEach(ui.addThoughtOnList)
@@ -53,9 +55,28 @@ const ui = {
         iconEdit.alt = "Edit"
         buttonEdit.appendChild(iconEdit)
 
+        const buttonDelete = document.createElement("button")
+        buttonDelete.classList.add("button-delete")
+        buttonDelete.onclick = async () => {
+            try {
+                await api.deleteThought(thought.id)
+                ui.renderThoughts()
+            } catch (error) {
+                alert ("Error when trying to delete thought")
+            }
+        }
+        
+        const iconDelete = document.createElement("img")
+        iconDelete.src = "assets/images/icon-delete.png"
+        iconDelete.alt = "Delete"
+        buttonDelete.appendChild(iconDelete)
+
+
         const icons = document.createElement("div")
         icons.classList.add("icons")
         icons.appendChild(buttonEdit)
+        icons.appendChild(buttonDelete)
+
 
 
         li.appendChild(iconQuotes)

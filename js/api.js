@@ -55,6 +55,19 @@ const api = {
         }
     },
 
+    async deleteThought(id) {
+        try {
+            const response = await fetch(`http://localhost:3000/thoughts/${id}`, {
+                method: "DELETE",
+            })
+
+        }
+        catch {
+            alert('Error when trying to delete thought')
+            throw error
+        }
+    }
+
 
 
 }
