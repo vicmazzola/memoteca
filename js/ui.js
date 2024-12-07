@@ -3,6 +3,14 @@ import api from "./api.js";
 
 const ui = {
 
+    async fillForm(thoughtId) {
+        const thought = await api.searchThoughtById(thoughtId)
+        document.getElementById("thought-id").value = thought.id
+        document.getElementById("thought-content").value = thought.content
+        document.getElementById("thought-author").value = thought.author
+    },
+
+
     cancelForm() {
         document.getElementById("thought-form").reset();
     },
@@ -36,10 +44,27 @@ const ui = {
         thoughtAuthor.textContent = thought.author
         thoughtAuthor.classList.add("thought-author")
 
+        const buttonEdit = document.createElement("button")
+        thoughtAuthor.classList.add("button-edit")
+        buttonEdit.onclick = () => ui.fillForm(thought.id)
+
+        const iconEdit = document.createElement("img")
+        iconEdit.src = "assets/images/icon-edit.png"
+        iconEdit.alt = "Edit"
+        buttonEdit.appendChild(iconEdit)
+
+        const icons = document.createElement("div")
+        icons.classList.add("icons")
+        icons.appendChild(buttonEdit)
+
+
         li.appendChild(iconQuotes)
         li.appendChild(thoughtContent)
         li.appendChild(thoughtAuthor)
+        li.appendChild(icons)
         thoughtList.appendChild(li)
+
+
     }
 
 
