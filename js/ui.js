@@ -6,7 +6,7 @@ const ui = {
         try {
             const thoughts = await api.searchThoughts();
             thoughts.forEach(ui.addThoughtOnList)
-        } catch  {
+        } catch {
             alert("Error rendering thoughts");
         }
     },
