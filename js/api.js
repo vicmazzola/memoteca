@@ -40,7 +40,7 @@ const api = {
 
     async editThought(thought) {
         try {
-          const response = await fetch(`http://localhost:3000/pensamentos/${thought.id}`, {
+          const response = await fetch(`http://localhost:3000/thoughts/${thought.id}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json"
