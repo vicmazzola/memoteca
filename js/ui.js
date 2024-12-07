@@ -5,35 +5,38 @@ const ui = {
         const thoughtList = document.getElementById("thought-list");
         try {
             const thoughts = await api.searchThoughts();
-            thoughts.forEach(thought => {
-                const listItem = document.createElement("li");
-                listItem.classList.add("thought-li");
-                listItem.setAttribute("data-id", thought.id);
-
-                const quoteIcon = document.createElement("img");
-                quoteIcon.src = "assets/images/blue-quotes.png";
-                quoteIcon.alt = "Blue quotes";
-                quoteIcon.classList.add("icon-quotes");
-
-                const contentDiv = document.createElement("div");
-                contentDiv.classList.add("thought-content");
-                contentDiv.textContent = thought.content;
-
-                const authorDiv = document.createElement("div");
-                authorDiv.classList.add("thought-author");
-                authorDiv.textContent = thought.author;
-
-                listItem.appendChild(quoteIcon);
-                listItem.appendChild(contentDiv);
-                listItem.appendChild(authorDiv);
-
-                thoughtList.appendChild(listItem);
-            });
-        } catch (error) {
+            thoughts.forEach(ui.addThoughtOnList)
+        } catch  {
             alert("Error rendering thoughts");
-            console.error("Error rendering thoughts:", error);
         }
     },
+
+    addThoughtOnList(thought) {
+        const thoughtList = document.getElementById("thought-list")
+        const li = document.createElement("li")
+        li.setAttribute("data-id", thought.id)
+        li.classList.add("thought-li")
+
+        const iconQuotes = document.createElement("img")
+        iconQuotes.src = "assets/images/blue-quotes.png"
+        iconQuotes.alt = "Blue quotes"
+        iconQuotes.classList.add("icon-quotes")
+
+        const thoughtContent = document.createElement("div")
+        thoughtContent.textContent = thought.content
+        thoughtContent.classList.add("thought-content")
+
+        const thoughtAuthor = document.createElement("div")
+        thoughtAuthor.textContent = thought.author
+        thoughtAuthor.classList.add("thought-author")
+
+        li.appendChild(iconQuotes)
+        li.appendChild(thoughtContent)
+        li.appendChild(thoughtAuthor)
+        thoughtList.appendChild(li)
+    }
+
+
 };
 
 export default ui;
