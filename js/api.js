@@ -25,8 +25,37 @@ const api = {
             throw error
             
         }
-    }
+    },
 
+    async searchThoughtById(id) {
+        try {
+            const response = await fetch(`http://localhost:3000/thoughts/${id}`)
+            return await response.json()
+        } catch {
+            alert('Error when searching for thought')
+            throw error
+            
+        }
+    },
+
+    async editThought(thought) {
+        try {
+          const response = await fetch(`http://localhost:3000/pensamentos/${thought.id}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(thought)
+          })
+          return await response.json()
+        }
+        catch {
+          alert('Error when try to edit thought')
+          throw error
+        }
+      },
+
+    
     
 }
 
