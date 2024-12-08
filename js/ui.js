@@ -21,7 +21,7 @@ const ui = {
         thoughtList.innerHTML = ""
 
         try {
-            let thoughtsForRender 
+            let thoughtsForRender
 
             if (thoughtsFiltered) {
                 thoughtsForRender = thoughtsFiltered
@@ -29,8 +29,8 @@ const ui = {
                 thoughtsForRender = await api.searchThoughts();
             }
 
-            
-            if(thoughtsForRender.length === 0){
+
+            if (thoughtsForRender.length === 0) {
                 emptyMessage.style.display = "block";
             } else {
                 emptyMessage.style.display = "none";
@@ -76,10 +76,10 @@ const ui = {
                 await api.deleteThought(thought.id)
                 ui.renderThoughts()
             } catch (error) {
-                alert ("Error when trying to delete thought")
+                alert("Error when trying to delete thought")
             }
         }
-        
+
         const iconDelete = document.createElement("img")
         iconDelete.src = "assets/images/icon-delete.png"
         iconDelete.alt = "Delete"
@@ -87,9 +87,17 @@ const ui = {
 
         const buttonFav = document.createElement("button")
         buttonFav.classList.add("button-fav")
+        buttonFav.onclick = async () =>  {
+            try {
+                await api.updateFav(thought.id, !thought.fav)
+                ui.renderThoughts()
+            } catch (error) {
+                alert("Error when trying to update")
+            }
+         }
 
         const iconFav = document.createElement("img")
-        iconFav.src = "assets/images/icon-fav-outline.png"
+        iconFav.src = thought.fav ? "assets/images/icon-fav.png" : "assets/images/icon-fav-outline.png"
         iconFav.alt = "Favorite Icon"
         buttonFav.appendChild(iconFav)
 
