@@ -23,7 +23,7 @@ const ui = {
         try {
             const thoughts = await api.searchThoughts();
             thoughts.forEach(ui.addThoughtOnList)
-            if(thoughts.lenght === 0){
+            if(thoughts.length === 0){
                 emptyMessage.style.display = "block";
             } else {
                 emptyMessage.style.display = "none";
