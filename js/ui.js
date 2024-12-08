@@ -85,9 +85,18 @@ const ui = {
         iconDelete.alt = "Delete"
         buttonDelete.appendChild(iconDelete)
 
+        const buttonFav = document.createElement("button")
+        buttonFav.classList.add("button-fav")
+
+        const iconFav = document.createElement("img")
+        iconFav.src = "assets/images/icon-fav-outline.png"
+        iconFav.alt = "Favorite Icon"
+        buttonFav.appendChild(iconFav)
+
 
         const icons = document.createElement("div")
         icons.classList.add("icons")
+        icons.appendChild(buttonFav)
         icons.appendChild(buttonEdit)
         icons.appendChild(buttonDelete)
 
