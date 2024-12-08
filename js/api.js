@@ -6,7 +6,7 @@ const api = {
         try {
             const response = await fetch(`${URL_BASE}/thoughts`)
             return await response.json()
-        } catch {
+        } catch (error) {
             alert('Error when searching for thoughts')
             throw error
 
@@ -23,7 +23,7 @@ const api = {
                 body: JSON.stringify(thought)
             })
             return await response.json()
-        } catch {
+        } catch (error) {
             alert('Error when searching for thoughts')
             throw error
 
@@ -34,7 +34,7 @@ const api = {
         try {
             const response = await fetch(`${URL_BASE}/thoughts/${id}`)
             return await response.json()
-        } catch {
+        } catch (error) {
             alert('Error when searching for thought')
             throw error
 
@@ -52,7 +52,7 @@ const api = {
             })
             return await response.json()
         }
-        catch {
+        catch (error) {
             alert('Error when try to edit thought')
             throw error
         }
@@ -65,13 +65,30 @@ const api = {
             })
 
         }
-        catch {
+        catch (error) {
             alert('Error when trying to delete thought')
             throw error
         }
+    },
+
+    async searchThoughtByTerm(term) {
+        try {
+            const thoughts = await this.searchThoughts()
+            const termInLowerCase = term.toLowerCase()
+    
+    
+            const thoughtsFiltered = thoughts.filter(thought => {
+                return(thought.content.toLowerCase().includes(termInLowerCase)) || 
+                thought.author.toLowerCase().includes(termInLowerCase)
+            })
+            return thoughtsFiltered
+            
+        } catch(error) {
+            alert("Error when filter thoughts")
+            throw error
+        }
+
     }
-
-
 
 }
 
