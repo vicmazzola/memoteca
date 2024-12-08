@@ -12,12 +12,6 @@ The project demonstrates the fundamentals of web development with JavaScript by 
 - Inspecting and debugging HTTP requests (headers, body, and status codes).
 - Leveraging JavaScript’s **Fetch API** for HTTP requests.
 
-## 🌐 Live Demo
-Explore the application live at: [Memoteca](https://memoteca-ebon.vercel.app/)
-
-## 🖼️ Preview
-![Project Preview](./img/img-preview.png)
-
 ## 🔨 Project Features
 - Simulated API with **JSON Server** to manage data.
 - CRUD operations:
