@@ -51,7 +51,3 @@ The project is organized into a clear folder structure:
 ├── index.html             # The main HTML file providing the app structure
 ```
 
-
-## 🚀 Deployment
-The project was deployed using **Vercel**, ensuring fast and reliable hosting.
-
