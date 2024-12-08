@@ -7,11 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const thoughtForm = document.getElementById("thought-form")
     const buttonCancel = document.getElementById("button-cancel")
+    const searchInput = document.getElementById("search-field")
+
 
     thoughtForm.addEventListener("submit", manipulateSubmitForm)
     buttonCancel.addEventListener("click", manipulateCancel)
-
-
+    searchInput.addEventListener("input", manipulateSearch)
 })
 
 
@@ -38,4 +39,15 @@ async function manipulateSubmitForm(event) {
 
 function manipulateCancel() {
     ui.cancelForm()
+}
+
+async function manipulateSearch() {
+    const searchTerm = document.getElementById("search-field").value
+    try {
+        const thoughtsFiltered = await api.searchThoughtByTerm(searchTerm)
+        console.log(thoughtsFiltered)
+        ui.renderThoughts(thoughtsFiltered)
+    } catch (error) {
+        alert("Error when trying to search")
+    }
 }
