@@ -45,7 +45,6 @@ async function manipulateSearch() {
     const searchTerm = document.getElementById("search-field").value
     try {
         const thoughtsFiltered = await api.searchThoughtByTerm(searchTerm)
-        console.log(thoughtsFiltered)
         ui.renderThoughts(thoughtsFiltered)
     } catch (error) {
         alert("Error when trying to search")
