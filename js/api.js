@@ -2,14 +2,21 @@ const URL_BASE = "http://localhost:5500";
 
 const convertStringToDate = (dateString) => {
   const [year, month, day] = dateString.split("-")
-  return new Date(Date.UTC(year, month, day))
+  return new Date(Date.UTC(year, month -1, day))
 }
 
 const api = {
   async searchThoughts() {
     try {
       const response = await axios.get(`${URL_BASE}/thoughts`);
-      return response.data;
+      const thoughts = await response.data;
+
+      return thoughts.map(thought => {
+        return {
+          ...thought,
+          date: new Date(thought.date)
+        }
+      })
     } catch (error) {
       alert("Error when searching for thoughts");
       throw error;
@@ -33,7 +40,12 @@ const api = {
   async searchThoughtById(id) {
     try {
       const response = await axios.get(`${URL_BASE}/thoughts/${id}`);
-      return response.data;
+      const thought = await response.data;
+
+      return {
+        ...thought,
+        date: new Date(thought.date)
+      }
     } catch (error) {
       alert("Error when searching for thought");
       throw error;

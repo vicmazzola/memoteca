@@ -8,6 +8,7 @@ const ui = {
         document.getElementById("thought-id").value = thought.id
         document.getElementById("thought-content").value = thought.content
         document.getElementById("thought-author").value = thought.author
+        document.getElementById("thought-date").value = thought.date
     },
 
 
@@ -59,6 +60,12 @@ const ui = {
         const thoughtAuthor = document.createElement("div")
         thoughtAuthor.textContent = thought.author
         thoughtAuthor.classList.add("thought-author")
+
+        const thoughtDate = document.createElement("div")
+        const formatedDate = thought.date.toLocaleDateString('pt-BR')
+        thoughtDate.textContent = formatedDate
+        thoughtDate.classList.add("thought-date")
+
 
         const buttonEdit = document.createElement("button")
         thoughtAuthor.classList.add("button-edit")
@@ -113,6 +120,8 @@ const ui = {
         li.appendChild(iconQuotes)
         li.appendChild(thoughtContent)
         li.appendChild(thoughtAuthor)
+        li.appendChild(thoughtDate)
+
         li.appendChild(icons)
         thoughtList.appendChild(li)
 
