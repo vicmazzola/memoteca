@@ -1,16 +1,23 @@
 import ui from "./ui.js"
 import api from "./api.js"
 
+function removeSpace(string) {
+    return string.replaceAll(/\s+/g, '')
+}
+
 const regexContent = /^[A-Za-z\s]{10,}$/;
+
+function validateContent (content) {
+    return regexContent.test(content)
+}
+
+
 const regexAuthor = /^[a-zA-Z]{3,15}$/;
 
 function validateAuthor(author) {
     return regexAuthor.test(author)
 }
 
-function validateContent (content) {
-    return regexContent.test(content)
-}
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -34,13 +41,16 @@ async function manipulateSubmitForm(event) {
     const author = document.getElementById("thought-author").value
     const date = document.getElementById("thought-date").value
 
-    if (!validateAuthor(author)) {
-        alert("Only letters and between 3 and 15");
+    const contentWithoutSpace = removeSpace(content)
+    const authorWithoutSpace = removeSpace(author)
+
+    if (!validateContent(contentWithoutSpace)) {
+        alert("Only letters and minimum 10 characters");
         return;
     }
 
-    if (!validateContent(content)) {
-        alert("Only letters and minimum 10 characters");
+    if (!validateAuthor(authorWithoutSpace)) {
+        alert("Only letters and between 3 and 15");
         return;
     }
 
