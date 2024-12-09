@@ -1,5 +1,10 @@
 const URL_BASE = "http://localhost:5500";
 
+const convertStringToDate = (dateString) => {
+  const [year, month, day] = dateString.split("-")
+  return new Date(Date.UTC(year, month, day))
+}
+
 const api = {
   async searchThoughts() {
     try {
@@ -13,7 +18,11 @@ const api = {
 
   async saveThought(thought) {
     try {
-      const response = await axios.post(`${URL_BASE}/thoughts`, thought);
+      const date = convertStringToDate(thought.date)
+      const response = await axios.post(`${URL_BASE}/thoughts`, {
+        ...thought,
+        date
+      });
       return response.data;
     } catch (error) {
       alert("Error when saving thought");
