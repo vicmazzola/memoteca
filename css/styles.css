@@ -124,7 +124,7 @@ h2, h3 {
   width: 100%;
 }
 
-#thought-content, #thought-author {
+#thought-content, #thought-author, #thought-date {
   padding: 16px;
   border-radius: 8px;
   background: var(--light-gray, #EDF0F4);
@@ -171,7 +171,7 @@ h2, h3 {
   padding-top: 16px;
 } 
 
-#button-save, #button-cancel {
+#button-save, #button-cancel, #button-fav {
   padding: 8px 32px;
   border-radius: 32px;
   color: var(--baby-blue, #DBE4EF);
@@ -180,6 +180,7 @@ h2, h3 {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
 }
 
 #button-save {
@@ -234,7 +235,7 @@ h2, h3 {
   height: 50px;
 }
 
-.thought-content, .thought-author {
+.thought-content, .thought-author, .thought-date {
   margin-left: 20px; 
   color: var(--gray, #444);
   font-family: "Roboto Mono";
@@ -257,13 +258,19 @@ h2, h3 {
   font-weight: 600;
 }
 
+.thought-date {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: end;
+}
+
 .icons {
   position: absolute;
   bottom: 16px;
   right: 16px;
 }
 
-.button-edit, .button-delete {
+.button-edit, .button-delete, .button-fav {
   background: none;
   border: none;
   cursor: pointer;
@@ -302,4 +309,35 @@ span {
   font-weight: 400;
   line-height: 33px;
   text-align: center;
+}
+
+#search-container {
+  display: flex;
+  align-items: center;
+  margin-top: 56px;
+  width: 100%; 
+  max-width: 600px; 
+  margin: 56px auto 0; 
+  padding: 0 16px; 
+}
+
+#search-field {
+  flex: 1; 
+  width: 572px;
+  height: 48px;
+  padding: 8px 16px;
+  border-radius: 32px;
+  border: 1px solid #144480;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  margin-bottom: 50px;
+}
+
+.search {
+  margin-left: -40px;
+  margin-bottom: 50px;
+  width: 24px;
+  height: 24px;
 }

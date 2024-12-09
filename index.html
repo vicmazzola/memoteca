@@ -7,6 +7,7 @@
   <title>Thoughts CRUD</title>
   <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -39,6 +40,8 @@
           Author or Source
         </label>
         <input type="text" id="thought-author" placeholder="Enter the author or source" required />
+        <label for="thought-date">Date</label>
+        <input type="date" id="thought-date" required>
         <div class="form-buttons">
           <button type="submit" id="button-save">
             Save
@@ -53,6 +56,11 @@
 
     <section id="thought-list-container">
       <h3>My Mural</h3>
+      <section id="search-container">
+        <input type="text" id="search-field" placeholder="What are you searching?">
+        <img class="search" src="assets/images/search.png" alt="">
+      </section>
+
       <div id="empty-message" class="empty-message">
         <img src="assets/images/empty-list.png" alt="None thought available">
         <p>Nothing here yet, what about share something?</p>
