@@ -124,7 +124,7 @@ h2, h3 {
   width: 100%;
 }
 
-#thought-content, #thought-author {
+#thought-content, #thought-author, #thought-date {
   padding: 16px;
   border-radius: 8px;
   background: var(--light-gray, #EDF0F4);
@@ -235,7 +235,7 @@ h2, h3 {
   height: 50px;
 }
 
-.thought-content, .thought-author {
+.thought-content, .thought-author, .thought-date {
   margin-left: 20px; 
   color: var(--gray, #444);
   font-family: "Roboto Mono";
@@ -256,6 +256,12 @@ h2, h3 {
 .thought-author {
   font-size: 22px;
   font-weight: 600;
+}
+
+.thought-date {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: end;
 }
 
 .icons {

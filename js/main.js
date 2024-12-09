@@ -21,12 +21,18 @@ async function manipulateSubmitForm(event) {
     const id = document.getElementById("thought-id").value
     const content = document.getElementById("thought-content").value
     const author = document.getElementById("thought-author").value
+    const date = document.getElementById("thought-date").value
+
+    if (!validateDate(date)) {
+        alert("You can't select dates in the future. Please choose a valid date.");
+        return;
+    }
 
     try {
         if (id) {
-            await api.editThought({ id, content, author })
+            await api.editThought({ id, content, author, date })
         } else {
-            await api.saveThought({ content, author })
+            await api.saveThought({ content, author, date })
         }
         ui.renderThoughts()
 
@@ -49,4 +55,10 @@ async function manipulateSearch() {
     } catch (error) {
         alert("Error when trying to search")
     }
+}
+
+function validateDate(date) {
+    const actualDate = new Date()
+    const insertDate = new Date(date)
+    return insertDate <= actualDate
 }
