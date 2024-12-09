@@ -8,7 +8,8 @@ const ui = {
         document.getElementById("thought-id").value = thought.id
         document.getElementById("thought-content").value = thought.content
         document.getElementById("thought-author").value = thought.author
-        document.getElementById("thought-date").value = thought.date
+        document.getElementById("thought-date").value = thought.date.toISOString().split("T")[0]
+        document.getElementById("form-container").scrollIntoView()
     },
 
 
@@ -62,7 +63,16 @@ const ui = {
         thoughtAuthor.classList.add("thought-author")
 
         const thoughtDate = document.createElement("div")
-        const formatedDate = thought.date.toLocaleDateString('pt-BR')
+
+        var options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            timeZone: 'UTC'
+        }
+
+        const formatedDate = thought.date.toLocaleDateString('pt-BR', options)
         thoughtDate.textContent = formatedDate
         thoughtDate.classList.add("thought-date")
 

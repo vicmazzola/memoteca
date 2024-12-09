@@ -28,7 +28,7 @@ const api = {
       const date = convertStringToDate(thought.date)
       const response = await axios.post(`${URL_BASE}/thoughts`, {
         ...thought,
-        date
+        date: date.toISOString()
       });
       return response.data;
     } catch (error) {
