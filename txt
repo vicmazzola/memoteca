@@ -1,4 +1,0 @@
-if (!validateAuthor(author)) {
-        alert("Only letters and between 3 and 15");
-        return;
-    }

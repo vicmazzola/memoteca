@@ -73,7 +73,8 @@ const ui = {
         }
 
         const formatedDate = thought.date.toLocaleDateString('pt-BR', options)
-        thoughtDate.textContent = formatedDate
+        const regexDate = formatedDate.replace(/^(\w)/, (match) => match.toUpperCase())
+        thoughtDate.textContent = regexDate
         thoughtDate.classList.add("thought-date")
 
 
