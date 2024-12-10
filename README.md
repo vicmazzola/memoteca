@@ -1,9 +1,16 @@
 # Memoteca
 
-This web application was built as part of the Alura course **JavaScript: Making HTTP Requests**. It follows the course content with adaptations and enhancements.
+This web application was built as part of the Alura courses: <br> **JavaScript: Making HTTP Requests** <br> **JavaScript: Evolving Your Application with ES6+**. <br>It follows the course content with adaptations and enhancements.
+
 
 ## ✨ Project Overview
 The project demonstrates the fundamentals of web development with JavaScript by implementing CRUD (Create, Read, Update, Delete) operations through HTTP requests. It simulates a real-world development environment using a fake API, enabling real-time data updates.
+
+## 🌐 Live Demo
+Need fix issues [Memoteca](https://memoteca-ebon.vercel.app/)
+
+## 🖼️ Preview
+Soon
 
 ## 🔍 Key Learning Outcomes
 - Understanding client-server communication.
@@ -25,6 +32,14 @@ The project demonstrates the fundamentals of web development with JavaScript by 
   - `api.js`: Configures and executes HTTP requests.
 - Use **Fetch API** for making requests.
 - Real-time updates and data manipulation via HTTP requests.
+- Dynamic search functionality (typeahead):
+- A new function in `api.js` was implemented using `.filter()` and `.includes()` to create a search field that displays matching results dynamically as the user types.
+- Advanced date manipulation:
+- Explored various JavaScript methods like `.UTC()`, `.toISOString()`, and `.toLocaleDateString()` to format dates dynamically and customize their presentation for a user-friendly experience.
+- Favorite functionality:
+- Implemented HTTP `.patch()` requests and utilized JavaScript's `Set()` to manage unique thoughts, preventing duplicates with the `.has()` method.
+- Form validations with regex:
+  - Used regular expressions for validating inputs with methods like `.test()`, `.match()`, and `.replaceAll()` for improved input accuracy and security.
 
 ## ✅ Technologies Used
 - **HTML**: For structuring the application’s content.
