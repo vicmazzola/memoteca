@@ -1,6 +1,8 @@
 import ui from "./ui.js"
 import api from "./api.js"
 
+const thoughtsSet = new Set()
+
 function removeSpace(string) {
     return string.replaceAll(/\s+/g, '')
 }
@@ -58,6 +60,15 @@ async function manipulateSubmitForm(event) {
         alert("You can't select dates in the future. Please choose a valid date.");
         return;
     }
+
+    const keyNewThought = 
+    `${content.trim().toLowerCase()}-${author.trim().toLowerCase()}` 
+
+    if(thoughtsSet.has(keyNewThought)){
+        alert("This thought already been registered!")
+        return
+    }
+    
 
     try {
         if (id) {
