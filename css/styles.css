@@ -280,6 +280,17 @@ h3 {
   right: 16px;
 }
 
+button {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 6px 10px; 
+  border-radius: 4px; 
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+}
+
 
 .button-edit,
 .button-delete,
@@ -289,6 +300,7 @@ h3 {
   cursor: pointer;
   padding: 8px;
   margin-left: 8px;
+  
   
 }
 
