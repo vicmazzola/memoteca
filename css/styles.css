@@ -13,6 +13,12 @@
   --white: #FFF;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Remove a rolagem horizontal */
+}
+
+
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
@@ -80,16 +86,6 @@ header .logo h1 {
 
 .header-image img {
   max-width: 500px;
-}
-
-footer {
-  padding: 32px 360px;
-  background: #041832;
-  color: var(--baby-blue, #DBE4EF);
-  text-align: center;
-  width: 100%;
-  position: relative;
-  left: 0;
 }
 
 h2,
@@ -238,8 +234,8 @@ h3 {
   position: absolute;
   top: 32px;
   left: 32px;
-  width: 64px;
-  height: 50px;
+  width: 54px;
+  height: 40px;
 }
 
 .thought-content,
@@ -280,6 +276,17 @@ h3 {
   right: 16px;
 }
 
+button {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 6px 10px; 
+  border-radius: 4px; 
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+}
+
 
 .button-edit,
 .button-delete,
@@ -289,6 +296,7 @@ h3 {
   cursor: pointer;
   padding: 8px;
   margin-left: 8px;
+  
   
 }
 
@@ -356,3 +364,190 @@ span {
   width: 24px;
   height: 24px;
 }
+
+footer {
+  padding: 20px;
+  background: #041832; 
+  color: #DBE4EF;
+  text-align: center; 
+  width: 100%; 
+  box-sizing: border-box; 
+}
+.footer-content p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px; 
+  line-height: 1.5; 
+}
+
+/* LARGE DISPLAY */
+
+@media (min-width: 1024px) {
+  header {
+    padding: 112px 240px;
+  }
+
+  #thought-list {
+    justify-content: space-between;
+  }
+
+  #thought-list-container {
+    max-width: 1200px;
+  }
+
+  .thought-li {
+    max-width: calc(33.333% - 24px);
+    min-width: 384px;
+  }
+}
+
+/* TABLET DISPLAY */
+
+@media (max-width: 1024px) {
+  header {
+    padding: 80px 120px;
+  }
+
+  #form-container {
+    padding: 32px;
+    max-width: 90%;
+  }
+
+  #thought-list {
+    justify-content: center;
+  }
+
+  .thought-li {
+    max-width: calc(50% - 16px);
+    min-width: 280px;
+  }
+}
+
+/* SMALL DISPLAY */
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 16px; 
+  }
+
+  header .logo h1 {
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  header .logo img {
+    max-width: 150px;
+    height: auto;
+  }
+
+  .header-image img {
+    max-width: 70%; 
+    height: auto;
+  }
+
+  #form-container {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  #thought-list {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #thought-form {
+    flex-direction: column;
+    gap: 12px; 
+  }
+
+
+  .thought-li {
+    max-width: 95%;
+    min-width: 0 auto;
+    margin-left: 7px;
+  }
+
+  .icons {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .icon-quotes {
+    width: 48px; 
+    height: 38px; 
+    top: 16px; 
+    left: 16px; 
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .search {
+    display: none; 
+  }
+
+  #search-field {
+    width: 100%; 
+  }
+
+  footer {
+    padding: 10px; 
+  }
+
+  .footer-content p {
+    font-size: 12px; 
+  }
+}
+
+
+
+/* REALLY SMALL DISPLAY */
+
+@media (max-width: 480px) {
+  header {
+    padding: 20px;
+  }
+
+  header .logo h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  
+
+  .thought-li {
+    padding: 10px;
+    padding-bottom: 30px;
+  }
+
+  #search-field {
+    width: 100%;
+    margin: 16px 0;
+  }
+
+  .icons {
+    gap: 6px;
+  }
+
+  .icon-quotes {
+    width: 40px; 
+    height: 30px; 
+    top: 12px; 
+    left: 12px; 
+  }
+}
+
