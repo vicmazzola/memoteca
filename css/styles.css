@@ -453,7 +453,7 @@ footer {
 
   #form-container {
     padding: 20px;
-    max-width: 100%;
+    max-width: 95%;
   }
 
   #thought-list {
@@ -468,8 +468,9 @@ footer {
 
 
   .thought-li {
-    max-width: 100%;
+    max-width: 95%;
     min-width: 0 auto;
+    margin-left: 7px;
   }
 
   .icons {
@@ -483,6 +484,13 @@ footer {
   img {
     max-width: 100%;
     height: auto;
+  }
+  .search {
+    display: none; 
+  }
+
+  #search-field {
+    width: 100%; 
   }
 
   footer {
