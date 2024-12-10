@@ -13,6 +13,12 @@
   --white: #FFF;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Remove a rolagem horizontal */
+}
+
+
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
@@ -368,3 +374,139 @@ span {
   width: 24px;
   height: 24px;
 }
+
+/* LARGE DISPLAY */
+
+@media (min-width: 1024px) {
+  header {
+    padding: 112px 240px;
+  }
+
+  #thought-list {
+    justify-content: space-between;
+  }
+
+  #thought-list-container {
+    max-width: 1200px;
+  }
+
+  .thought-li {
+    max-width: calc(33.333% - 24px);
+    min-width: 384px;
+  }
+}
+
+/* TABLET DISPLAY */
+
+@media (max-width: 1024px) {
+  header {
+    padding: 80px 120px;
+  }
+
+  #form-container {
+    padding: 32px;
+    max-width: 90%;
+  }
+
+  #thought-list {
+    justify-content: center;
+  }
+
+  .thought-li {
+    max-width: calc(50% - 16px);
+    min-width: 280px;
+  }
+}
+
+/* SMALL DISPLAY */
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 16px; 
+  }
+
+  header .logo h1 {
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  header .logo img {
+    max-width: 150px;
+    height: auto;
+  }
+
+  #form-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  #thought-list {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  #thought-form {
+    flex-direction: column;
+    gap: 12px; 
+  }
+
+
+  .thought-li {
+    max-width: 100%;
+    min-width: 0 auto;
+  }
+
+  .icons {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+
+/* REALLY SMALL DISPLAY */
+
+@media (max-width: 480px) {
+  header {
+    padding: 20px;
+  }
+
+  header .logo h1 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .thought-li {
+    padding: 10px;
+  }
+
+  #search-field {
+    width: 100%;
+    margin: 16px 0;
+  }
+
+  .icons {
+    gap: 6px;
+  }
+}
+
