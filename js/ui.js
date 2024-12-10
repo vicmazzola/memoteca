@@ -72,8 +72,9 @@ const ui = {
             timeZone: 'UTC'
         }
 
-        const formatedDate = thought.date.toLocaleDateString('pt-BR', options)
-        thoughtDate.textContent = formatedDate
+        const formatedDate = thought.date.toLocaleDateString('en-US', options)
+        const regexDate = formatedDate.replace(/^(\w)/, (match) => match.toUpperCase())
+        thoughtDate.textContent = regexDate
         thoughtDate.classList.add("thought-date")
 
 
