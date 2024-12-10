@@ -234,8 +234,8 @@ h3 {
   position: absolute;
   top: 32px;
   left: 32px;
-  width: 64px;
-  height: 50px;
+  width: 54px;
+  height: 40px;
 }
 
 .thought-content,
@@ -451,6 +451,11 @@ footer {
     height: auto;
   }
 
+  .header-image img {
+    max-width: 70%; 
+    height: auto;
+  }
+
   #form-container {
     padding: 20px;
     max-width: 95%;
@@ -479,6 +484,13 @@ footer {
     justify-content: flex-end;
     gap: 10px;
     margin-top: 10px;
+  }
+
+  .icon-quotes {
+    width: 48px; 
+    height: 38px; 
+    top: 16px; 
+    left: 16px; 
   }
 
   img {
@@ -515,9 +527,11 @@ footer {
     font-size: 24px;
     line-height: 32px;
   }
+  
 
   .thought-li {
     padding: 10px;
+    padding-bottom: 30px;
   }
 
   #search-field {
@@ -527,6 +541,13 @@ footer {
 
   .icons {
     gap: 6px;
+  }
+
+  .icon-quotes {
+    width: 40px; 
+    height: 30px; 
+    top: 12px; 
+    left: 12px; 
   }
 }
 
